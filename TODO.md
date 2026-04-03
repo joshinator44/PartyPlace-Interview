@@ -71,72 +71,72 @@
 
 ### Backend — Validation Service
 
-- [ ] **`backend/src/venue-search/validation.service.ts`** — `validate(criteria: SearchCriteria, originalQuery: string): ValidationResult | null`
-  - [ ] Rule: Weekend bookings (Fri/Sat/Sun) require minimum budget of $1,500 (only when budget is provided)
-  - [ ] Rule: Events must be booked at least 3 days in advance
-  - [ ] Rule: Guest count must be at least 10 (only when guest count is provided)
-  - [ ] Return `null` if all rules pass
-  - [ ] On failure: return clear error messages explaining the issue
-  - [ ] On failure: return a suggested improved version of the query (string manipulation, not another AI call)
-- [ ] **`backend/src/venue-search/validation.service.spec.ts`** — Tests (write before implementation)
-  - [ ] Weekend + budget < $1,500 → error
-  - [ ] Weekend + budget >= $1,500 → no error
-  - [ ] Weekend + no budget provided → no error (skip rule)
-  - [ ] Date less than 3 days out → error
-  - [ ] Date exactly 3 days out → no error
-  - [ ] Guest count < 10 → error
-  - [ ] Guest count >= 10 → no error
-  - [ ] No guest count → no error (skip rule)
-  - [ ] Multiple rules fail simultaneously → multiple errors returned
-  - [ ] Suggested query generated for each error type
+- [x] **`backend/src/venue-search/validation.service.ts`** — `validate(criteria: SearchCriteria, originalQuery: string): ValidationResult | null`
+  - [x] Rule: Weekend bookings (Fri/Sat/Sun) require minimum budget of $1,500 (only when budget is provided)
+  - [x] Rule: Events must be booked at least 3 days in advance
+  - [x] Rule: Guest count must be at least 10 (only when guest count is provided)
+  - [x] Return `null` if all rules pass
+  - [x] On failure: return clear error messages explaining the issue
+  - [x] On failure: return a suggested improved version of the query (string manipulation, not another AI call)
+- [x] **`backend/src/venue-search/validation.service.spec.ts`** — Tests (write before implementation)
+  - [x] Weekend + budget < $1,500 → error
+  - [x] Weekend + budget >= $1,500 → no error
+  - [x] Weekend + no budget provided → no error (skip rule)
+  - [x] Date less than 3 days out → error
+  - [x] Date exactly 3 days out → no error
+  - [x] Guest count < 10 → error
+  - [x] Guest count >= 10 → no error
+  - [x] No guest count → no error (skip rule)
+  - [x] Multiple rules fail simultaneously → multiple errors returned
+  - [x] Suggested query generated for each error type
 
 ### Backend — Venue Matcher Service
 
-- [ ] **`backend/data/venues.json`** — Copy `venues.json` from project root
-- [ ] **`backend/src/venue-search/venue-matcher.service.ts`** — `matchVenues(criteria: SearchCriteria): Venue[]`
-  - [ ] Load `venues.json` into memory on module init
-  - [ ] Filter by `location`: case-insensitive substring match (criteria in venue or venue in criteria)
-  - [ ] Filter by `guestCount`: `venue.maxGuestCount >= criteria.guestCount`
-  - [ ] Filter by `budget`: `venue.minBudget <= criteria.budget`
-  - [ ] Filter by `dayOfWeek`: derive day name from `criteria.date`, check against `venue.availableDays`
-  - [ ] Filter by `timeOfDay`: check against `venue.openTimes`
-  - [ ] Filter by `occasion`: case-insensitive match against `venue.occasions`
-  - [ ] Skip filter for a venue when that venue's field is `null` (don't exclude, don't crash)
-  - [ ] Skip venues missing `id` or `name`; log warning via NestJS Logger
-- [ ] **`backend/src/venue-search/venue-matcher.service.spec.ts`** — Tests (write before implementation)
-  - [ ] Filters by location (case-insensitive substring)
-  - [ ] Filters by guest count
-  - [ ] Filters by budget
-  - [ ] Filters by day of week
-  - [ ] Filters by time of day
-  - [ ] Filters by occasion (case-insensitive)
-  - [ ] Skips filter when venue field is null (`minBudget`, `maxGuestCount`)
-  - [ ] Skips malformed venues (missing `id` or `name`), logs warning
-  - [ ] Returns all venues when no criteria provided (all fields null)
-  - [ ] Multiple filters narrow results correctly
+- [x] **`backend/data/venues.json`** — Copy `venues.json` from project root
+- [x] **`backend/src/venue-search/venue-matcher.service.ts`** — `matchVenues(criteria: SearchCriteria): Venue[]`
+  - [x] Load `venues.json` into memory on module init
+  - [x] Filter by `location`: case-insensitive substring match (criteria in venue or venue in criteria)
+  - [x] Filter by `guestCount`: `venue.maxGuestCount >= criteria.guestCount`
+  - [x] Filter by `budget`: `venue.minBudget <= criteria.budget`
+  - [x] Filter by `dayOfWeek`: derive day name from `criteria.date`, check against `venue.availableDays`
+  - [x] Filter by `timeOfDay`: check against `venue.openTimes`
+  - [x] Filter by `occasion`: case-insensitive match against `venue.occasions`
+  - [x] Skip filter for a venue when that venue's field is `null` (don't exclude, don't crash)
+  - [x] Skip venues missing `id` or `name`; log warning via NestJS Logger
+- [x] **`backend/src/venue-search/venue-matcher.service.spec.ts`** — Tests (write before implementation)
+  - [x] Filters by location (case-insensitive substring)
+  - [x] Filters by guest count
+  - [x] Filters by budget
+  - [x] Filters by day of week
+  - [x] Filters by time of day
+  - [x] Filters by occasion (case-insensitive)
+  - [x] Skips filter when venue field is null (`minBudget`, `maxGuestCount`)
+  - [x] Skips malformed venues (missing `id` or `name`), logs warning
+  - [x] Returns all venues when no criteria provided (all fields null)
+  - [x] Multiple filters narrow results correctly
 
 ### Backend — Orchestrator Update
 
-- [ ] **`backend/src/venue-search/venue-search.service.ts`** — Update orchestrator to: parse (OpenAI) → validate → if valid, match venues → build full response
-- [ ] **`backend/src/venue-search/venue-search.service.spec.ts`** — Integration test with mocked OpenAI: full flow returns correct `SearchResponse`
+- [x] **`backend/src/venue-search/venue-search.service.ts`** — Update orchestrator to: parse (OpenAI) → validate → if valid, match venues → build full response
+- [x] **`backend/src/venue-search/venue-search.service.spec.ts`** — Integration test with mocked OpenAI: full flow returns correct `SearchResponse`
 
 ### Frontend — Results & Error Display
 
-- [ ] **`frontend/components/VenueCard.tsx`** — Card showing: name, location, max capacity, minimum budget, occasion tags, available days and times
-- [ ] **`frontend/components/ValidationError.tsx`** — Yellow warning box with error list + "Try this instead" suggested query; clicking suggestion populates search bar and re-submits
-- [ ] **`frontend/app/page.tsx`** — Update to handle all states:
-  - [ ] Results state: show applied filters + venue cards
-  - [ ] Validation error state: show applied filters + validation warning with suggested query
-  - [ ] No results: show applied filters + "No venues match your criteria" message
-  - [ ] API error: parse backend error response body, show specific message
-- [ ] **`frontend/app/globals.css`** — Add styles: venue cards, validation warning box, error states, responsive layout
+- [x] **`frontend/components/VenueCard.tsx`** — Card showing: name, location, max capacity, minimum budget, occasion tags, available days and times
+- [x] **`frontend/components/ValidationError.tsx`** — Yellow warning box with error list + "Try this instead" suggested query; clicking suggestion populates search bar and re-submits
+- [x] **`frontend/app/page.tsx`** — Update to handle all states:
+  - [x] Results state: show applied filters + venue cards
+  - [x] Validation error state: show applied filters + validation warning with suggested query
+  - [x] No results: show applied filters + "No venues match your criteria" message
+  - [x] API error: parse backend error response body, show specific message
+- [x] **`frontend/app/globals.css`** — Add styles: venue cards, validation warning box, error states, responsive layout
 
 ### Milestone 2 Verification
 
-- [ ] `npm run build` in both `backend/` and `frontend/` — compile cleanly
-- [ ] `npm test` in `backend/` — all tests pass (validation, matcher, OpenAI, integration)
-- [ ] Manual test: "Birthday in Brooklyn for 50 people on May 5th" → matching venues displayed with correct filters
-- [ ] Manual test: query triggering validation error (e.g., "Party on Saturday for $500") → error shown with suggested query
+- [x] `npm run build` in both `backend/` and `frontend/` — compile cleanly
+- [x] `npm test` in `backend/` — all tests pass (validation, matcher, OpenAI, integration)
+- [x] Manual test: "Birthday in SoHo for 50 people on a Friday evening with a $3000 budget" → matching venues displayed with correct filters
+- [x] Manual test: query triggering validation error ("Party on Saturday May 9th 2026 for $500") → error shown with suggested query
 - [ ] Manual test: click suggested query → re-searches automatically
-- [ ] Manual test: empty query → 400 error handled gracefully in UI
+- [x] Manual test: empty query → 400 error handled gracefully in UI
 - [ ] Git commit milestone 2

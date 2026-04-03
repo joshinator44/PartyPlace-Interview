@@ -72,8 +72,9 @@ Infer timeOfDay from context: "dinner" → evening, "brunch" → morning, "late 
         );
       }
 
+      let parsed: Record<string, unknown>;
       try {
-        return JSON.parse(content) as SearchCriteria;
+        parsed = JSON.parse(content) as Record<string, unknown>;
       } catch {
         this.logger.error(`Failed to parse OpenAI response: ${content}`);
         throw new HttpException(
@@ -81,6 +82,8 @@ Infer timeOfDay from context: "dinner" → evening, "brunch" → morning, "late 
           502,
         );
       }
+
+      return this.sanitizeCriteria(parsed);
     } catch (error) {
       if (error instanceof HttpException) throw error;
 
@@ -100,5 +103,22 @@ Infer timeOfDay from context: "dinner" → evening, "brunch" → morning, "late 
       this.logger.error(`OpenAI error: ${(error as Error).message}`);
       throw new HttpException('AI service temporarily unavailable', 502);
     }
+  }
+
+  private sanitizeCriteria(raw: Record<string, unknown>): SearchCriteria {
+    return {
+      budget:
+        typeof raw.budget === 'number' ? raw.budget : null,
+      guestCount:
+        typeof raw.guestCount === 'number' ? raw.guestCount : null,
+      location:
+        typeof raw.location === 'string' ? raw.location : null,
+      date:
+        typeof raw.date === 'string' ? raw.date : null,
+      timeOfDay:
+        typeof raw.timeOfDay === 'string' ? raw.timeOfDay : null,
+      occasion:
+        typeof raw.occasion === 'string' ? raw.occasion : null,
+    };
   }
 }

@@ -205,5 +205,46 @@ describe('VenueMatcherService', () => {
       expect(logSpy).toHaveBeenCalled();
       logSpy.mockRestore();
     });
+
+    it('should not crash on venues with null location', () => {
+      service['venues'] = [
+        {
+          id: 90,
+          name: 'Null Location Venue',
+          minBudget: 1000,
+          maxGuestCount: 50,
+          location: null,
+          availableDays: ['Friday'],
+          openTimes: ['evening'],
+          occasions: ['Birthday'],
+        } as any,
+        ...TEST_VENUES,
+      ];
+
+      const result = service.matchVenues(makeCriteria({ location: 'SoHo' }));
+      expect(result.map((v) => v.name)).not.toContain('Null Location Venue');
+      expect(result.map((v) => v.name)).toContain('SoHo Skyline Loft');
+    });
+
+    it('should not crash on venues with null arrays', () => {
+      service['venues'] = [
+        {
+          id: 91,
+          name: 'Null Arrays Venue',
+          minBudget: 1000,
+          maxGuestCount: 50,
+          location: 'Chelsea',
+          availableDays: null,
+          openTimes: null,
+          occasions: null,
+        } as any,
+        ...TEST_VENUES,
+      ];
+
+      const result = service.matchVenues(
+        makeCriteria({ occasion: 'Birthday', timeOfDay: 'evening', date: '2026-05-08' }),
+      );
+      expect(result.map((v) => v.name)).not.toContain('Null Arrays Venue');
+    });
   });
 });

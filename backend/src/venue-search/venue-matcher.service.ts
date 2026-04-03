@@ -30,6 +30,7 @@ export class VenueMatcherService implements OnModuleInit {
       }
 
       if (criteria.location !== null) {
+        if (!venue.location) return false;
         const search = criteria.location.toLowerCase();
         const loc = venue.location.toLowerCase();
         if (!loc.includes(search) && !search.includes(loc)) {
@@ -56,6 +57,7 @@ export class VenueMatcherService implements OnModuleInit {
       }
 
       if (criteria.date !== null) {
+        if (!Array.isArray(venue.availableDays)) return false;
         const eventDate = new Date(criteria.date + 'T00:00:00');
         const dayName = eventDate.toLocaleDateString('en-US', {
           weekday: 'long',
@@ -66,12 +68,14 @@ export class VenueMatcherService implements OnModuleInit {
       }
 
       if (criteria.timeOfDay !== null) {
+        if (!Array.isArray(venue.openTimes)) return false;
         if (!venue.openTimes.includes(criteria.timeOfDay)) {
           return false;
         }
       }
 
       if (criteria.occasion !== null) {
+        if (!Array.isArray(venue.occasions)) return false;
         const searchOccasion = criteria.occasion.toLowerCase();
         if (
           !venue.occasions.some((o) => o.toLowerCase() === searchOccasion)

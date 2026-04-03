@@ -139,4 +139,32 @@ describe('OpenaiService', () => {
       status: 502,
     });
   });
+
+  it('should coerce invalid field types to null', async () => {
+    mockCreate.mockResolvedValue({
+      choices: [
+        {
+          message: {
+            content: JSON.stringify({
+              budget: 'expensive',
+              guestCount: 'many',
+              location: 123,
+              date: true,
+              timeOfDay: [],
+              occasion: 'Birthday',
+            }),
+          },
+        },
+      ],
+    });
+
+    const result = await service.parseQuery('test');
+
+    expect(result.budget).toBeNull();
+    expect(result.guestCount).toBeNull();
+    expect(result.location).toBeNull();
+    expect(result.date).toBeNull();
+    expect(result.timeOfDay).toBeNull();
+    expect(result.occasion).toBe('Birthday');
+  });
 });
