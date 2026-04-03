@@ -1,0 +1,244 @@
+:root {
+  --primary: #667eea;
+  --primary-dark: #5a6fd6;
+  --bg: #fafafa;
+  --card-bg: #ffffff;
+  --text: #333333;
+  --text-muted: #666666;
+  --border: #e0e0e0;
+  --chip-bg: #e8f4fd;
+  --chip-text: #1a73e8;
+  --error-bg: #fef2f2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+  --warning-bg: #fff8e1;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-geist), Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 48px 24px 36px;
+  text-align: center;
+  margin: 0 -20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.hero p {
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+.search-input:disabled {
+  opacity: 0.6;
+}
+
+.search-button {
+  padding: 14px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.search-button:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.search-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Applied Filters */
+.applied-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.filter-chip {
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Results */
+.results-section {
+  margin-top: 8px;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px 0;
+  font-size: 15px;
+}
+
+/* Results count */
+.results-count {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+/* Venue Card */
+.venue-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.venue-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.venue-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.venue-meta {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.venue-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.venue-occasions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.occasion-tag {
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+.venue-availability {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Validation Warning */
+.validation-warning {
+  background: var(--warning-bg);
+  border-left: 4px solid var(--warning-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.validation-title {
+  font-weight: 600;
+  color: var(--warning-text);
+  margin-bottom: 8px;
+}
+
+.validation-errors {
+  margin: 0;
+  padding-left: 20px;
+  color: #78350f;
+  font-size: 14px;
+}
+
+.validation-suggestion {
+  margin-top: 12px;
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.validation-suggestion:hover {
+  box-shadow: 0 0 0 2px var(--warning-border);
+}
+
+/* Error */
+.error-box {
+  background: var(--error-bg);
+  border-left: 4px solid var(--error-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  color: var(--error-text);
+  font-size: 14px;
+}

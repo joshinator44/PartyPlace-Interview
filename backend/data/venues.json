@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "SoHo Skyline Loft",
+    "minBudget": 2500,
+    "maxGuestCount": 80,
+    "location": "SoHo",
+    "availableDays": ["Friday", "Saturday", "Sunday"],
+    "openTimes": ["afternoon", "evening", "night"],
+    "occasions": ["Birthday", "Engagement", "Graduation"]
+  },
+  {
+    "id": 2,
+    "name": "Williamsburg Garden House",
+    "minBudget": 1200,
+    "maxGuestCount": 40,
+    "location": "Williamsburg",
+    "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+    "openTimes": ["morning", "afternoon"],
+    "occasions": ["Anniversary", "Reunion", "Fundraiser"]
+  },
+  {
+    "id": 3,
+    "name": "Midtown Grand Hall",
+    "minBudget": 3000,
+    "maxGuestCount": 150,
+    "location": "Midtown",
+    "availableDays": ["Thursday", "Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening", "night"],
+    "occasions": ["Wedding", "Engagement", "Office Party", "Holiday Party"]
+  },
+  {
+    "id": 4,
+    "name": "Chelsea Corner Studio",
+    "minBudget": 900,
+    "maxGuestCount": 25,
+    "location": "Chelsea",
+    "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "openTimes": ["morning", "afternoon", "evening"],
+    "occasions": ["Birthday", "Graduation"]
+  },
+  {
+    "id": 5,
+    "name": "Bushwick Rooftop",
+    "minBudget": 2200,
+    "maxGuestCount": 70,
+    "location": "Bushwick",
+    "availableDays": ["Friday", "Saturday", "Sunday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Birthday", "Happy hour", "Bachelor/Bachelorette"]
+  },
+  {
+    "id": 6,
+    "name": "Tribeca Pearl Venue",
+    "minBudget": 3500,
+    "maxGuestCount": 120,
+    "location": "Tribeca",
+    "availableDays": ["Wednesday", "Thursday", "Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Wedding", "Anniversary", "Engagement"]
+  },
+  {
+    "id": 7,
+    "name": "East Village Social Club",
+    "minBudget": 800,
+    "maxGuestCount": 35,
+    "location": "East Village",
+    "availableDays": ["Thursday", "Friday", "Saturday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Birthday", "Happy hour", "Bachelor/Bachelorette"]
+  },
+  {
+    "id": 8,
+    "name": "Upper West Banquet Room",
+    "minBudget": 1800,
+    "maxGuestCount": 60,
+    "location": "Upper West Side",
+    "availableDays": ["Saturday", "Sunday"],
+    "openTimes": ["morning", "afternoon", "evening"],
+    "occasions": ["Graduation", "Reunion", "Fundraiser"]
+  },
+  {
+    "id": 9,
+    "name": "DUMBO Warehouse Events",
+    "minBudget": 2700,
+    "maxGuestCount": 110,
+    "location": "DUMBO",
+    "availableDays": ["Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening", "night"],
+    "occasions": ["Office Party", "Holiday Party", "Fundraiser"]
+  },
+  {
+    "id": 10,
+    "name": "Astoria Light Hall",
+    "minBudget": 1100,
+    "maxGuestCount": 50,
+    "location": "Astoria",
+    "availableDays": ["Monday", "Wednesday", "Friday", "Sunday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Birthday", "Anniversary", "Graduation"]
+  },
+  {
+    "id": 11,
+    "name": "Greenpoint Harbor Loft",
+    "minBudget": 2000,
+    "maxGuestCount": 90,
+    "location": "Greenpoint",
+    "availableDays": ["Thursday", "Friday", "Saturday", "Sunday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Engagement", "Happy hour", "Office Party"]
+  },
+  {
+    "id": 12,
+    "name": "Flatiron Private Dining Room",
+    "minBudget": 1600,
+    "maxGuestCount": 45,
+    "location": "Flatiron",
+    "availableDays": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Anniversary", "Engagement", "Reunion"]
+  },
+  {
+    "id": 13,
+    "name": "NoHo Velvet Space",
+    "minBudget": 1400,
+    "maxGuestCount": 55,
+    "location": "NoHo",
+    "availableDays": ["Friday", "Saturday", "Sunday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Birthday", "Graduation", "Bachelor/Bachelorette"]
+  },
+  {
+    "id": 14,
+    "name": "Financial District Clubhouse",
+    "minBudget": 2300,
+    "maxGuestCount": 85,
+    "location": "Financial District",
+    "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Office Party", "Happy hour", "Fundraiser"]
+  },
+  {
+    "id": 15,
+    "name": "Park Slope Terrace",
+    "minBudget": 1500,
+    "maxGuestCount": 65,
+    "location": "Park Slope",
+    "availableDays": ["Saturday", "Sunday"],
+    "openTimes": ["morning", "afternoon", "evening"],
+    "occasions": ["Birthday", "Anniversary", "Reunion"]
+  },
+  {
+    "id": 16,
+    "name": "Harlem Heritage Hall",
+    "minBudget": 1300,
+    "maxGuestCount": 75,
+    "location": "Harlem",
+    "availableDays": ["Thursday", "Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Graduation", "Fundraiser", "Holiday Party"]
+  },
+  {
+    "id": 17,
+    "name": "Long Island City Loft",
+    "minBudget": 1900,
+    "maxGuestCount": 100,
+    "location": "Long Island City",
+    "availableDays": ["Friday", "Saturday", "Sunday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Wedding", "Engagement", "Office Party"]
+  },
+  {
+    "id": 18,
+    "name": "Battery Park View Room",
+    "minBudget": 2800,
+    "maxGuestCount": 95,
+    "location": "Battery Park",
+    "availableDays": ["Wednesday", "Thursday", "Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Wedding", "Anniversary", "Fundraiser"]
+  },
+  {
+    "id": 19,
+    "name": "Lower East Side Studio",
+    "minBudget": 1000,
+    "maxGuestCount": 50,
+    "location": "Lower East Side",
+    "availableDays": ["Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening", "night"],
+    "occasions": ["Birthday", "Bachelor/Bachelorette", "Reunion"]
+  },
+  {
+    "id": 20,
+    "name": "Gramercy Classic Hall",
+    "minBudget": 2100,
+    "maxGuestCount": 70,
+    "location": "Gramercy",
+    "availableDays": ["Thursday", "Friday", "Saturday", "Sunday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Engagement", "Anniversary", "Holiday Party"]
+  },
+  {
+    "id": 21,
+    "name": "Hudson Yards Event Deck",
+    "minBudget": 3200,
+    "maxGuestCount": 130,
+    "location": "Hudson Yards",
+    "availableDays": ["Friday", "Saturday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Office Party", "Holiday Party", "Fundraiser", "Engagement"]
+  },
+  {
+    "id": 22,
+    "name": "Queens Celebration Hall",
+    "minBudget": 1700,
+    "maxGuestCount": 85,
+    "location": "Queens",
+    "availableDays": ["Saturday", "Sunday"],
+    "openTimes": ["morning", "afternoon", "evening"],
+    "occasions": ["Birthday", "Graduation", "Wedding"]
+  },
+  {
+    "id": 23,
+    "name": "Bronx Riverside Venue",
+    "minBudget": 1250,
+    "maxGuestCount": 60,
+    "location": "Bronx",
+    "availableDays": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Reunion", "Fundraiser", "Office Party"]
+  },
+  {
+    "id": 24,
+    "name": "Coney Island Pavilion",
+    "minBudget": 1800,
+    "maxGuestCount": 100,
+    "location": "Coney Island",
+    "availableDays": ["Friday", "Saturday", "Sunday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Birthday", "Graduation", "Holiday Party"]
+  },
+  {
+    "id": 25,
+    "name": "Red Hook Harbor Hall",
+    "minBudget": null,
+    "maxGuestCount": 115,
+    "location": "Red Hook",
+    "availableDays": ["Saturday", "Sunday"],
+    "openTimes": ["evening", "night"],
+    "occasions": ["Fundraiser", "Office Party", "Holiday Party"]
+  },
+  {
+    "id": 26,
+    "name": "Sunset Park Terrace",
+    "minBudget": 1450,
+    "maxGuestCount": null,
+    "location": "Sunset Park",
+    "availableDays": ["Friday", "Saturday", "Sunday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Birthday", "Reunion"]
+  },
+  {
+    "id": 27,
+    "name": "Upper East Gold Room",
+    "minBudget": 3600,
+    "maxGuestCount": 140,
+    "location": "Upper East Side",
+    "availableDays": ["Thursday", "Friday", "Saturday"],
+    "openTimes": ["afternoon", "evening", "night"],
+    "occasions": ["Wedding", "Engagement", "Anniversary", "Fundraiser"]
+  },
+  {
+    "id": 28,
+    "name": "Brooklyn Heights Social House",
+    "minBudget": 1550,
+    "maxGuestCount": 58,
+    "location": "Brooklyn Heights",
+    "availableDays": ["Wednesday", "Thursday", "Friday", "Saturday"],
+    "openTimes": ["evening"],
+    "occasions": ["Happy hour", "Office Party", "Birthday"]
+  },
+  {
+    "id": 29,
+    "name": "Upper West Lounge",
+    "minBudget": 1300,
+    "maxGuestCount": 55,
+    "location": "Upper West Side",
+    "availableDays": ["Monday", "Tuesday", "Wednesday"],
+    "openTimes": ["afternoon", "evening"],
+    "occasions": ["Happy hour", "Reunion"]
+  },
+  {
+    "id": 30,
+    "name": "SoHo Private Dining",
+    "minBudget": 2000,
+    "maxGuestCount": 45,
+    "location": "SoHo",
+    "availableDays": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+    "openTimes": ["evening"],
+    "occasions": ["Anniversary", "Engagement", "Birthday"]
+  }
+]
